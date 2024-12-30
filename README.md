@@ -67,19 +67,14 @@ Aquí tienes una lista de recursos que te serán de gran utilidad:
 *   **Documentación oficial de Python:** [https://docs.python.org/3/](https://docs.python.org/3/)
 *   **Tutorial de NumPy:** [https://numpy.org/doc/stable/user/quickstart.html](https://numpy.org/doc/stable/user/quickstart.html)
 *   **Tutorial de Pandas:** [https://pandas.pydata.org/docs/user_guide/index.html](https://pandas.pydata.org/docs/user_guide/index.html)
-*   *(Añade aquí otros recursos relevantes: cursos online, libros, blogs, etc.)*
+
 
 ---
 
-##  Notas y Pendientes
 
-*   [ ] Repasar el concepto de herencia múltiple con ejemplos más complejos.
-*   [ ] Buscar datasets interesantes para practicar con Pandas.
-*   [ ] Investigar librerías de visualización de datos más avanzadas (Seaborn, Plotly).
-*   *(Añade aquí tus propias notas, dudas y tareas pendientes usando listas de tareas con `[ ]` para marcar como completadas)*
 
----
 
-**Última actualización:** \[Fecha de la última actualización]
+
+**Última actualización:** \[29/12/24]
 
 
