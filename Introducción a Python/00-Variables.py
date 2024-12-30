@@ -1,62 +1,84 @@
-## Variables
+# Variables en Python
 
-# Una variable es un espacio en memoria que se utiliza para almacenar datos.
-# Las variables pueden cambiar su valor durante la ejecución del programa.
-# Antes de utilizarlas, es necesario declararlas y asignarles un valor inicial.
+# Una variable es un nombre que se refiere a una ubicación en la memoria donde se almacenan datos.
+# Python infiere el tipo de dato según el valor asignado.
 
-# Ejemplo de declaración y definición de variables numéricas:
-a = 5  # Asignamos el valor 5 a la variable 'a'.
-b = 3  # Asignamos el valor 3 a la variable 'b'.
-c = a + b  # Sumamos los valores de 'a' y 'b' y los almacenamos en 'c'.
-print("La suma es:", c)
-
-# Ejemplo de declaración y uso de una variable tipo string:
-nombre = "Gustavo"  # Asignamos una cadena de texto a la variable 'nombre'.
-print("El nombre es:", nombre)
-
-# Ejemplo de modificación del valor de una variable numérica:
-numero = 10  # Asignamos el valor inicial 10 a 'numero'.
-# Utilizamos un operador de asignación compuesta para incrementar el valor de 'numero'.
-numero += 5  # Esto suma 5 al valor actual de 'numero'.
-numero += 5  # Repetimos el incremento sumando otros 5.
-print(numero)
-
-## ¿Qué es la concatenación?
-
-# La concatenación es el proceso de unir dos o más cadenas de texto (strings).
-# Cada carácter cuenta en la concatenación, incluidos los espacios.
-# Para unir cadenas con variables que no son texto, como números o valores booleanos, es recomendable usar f-strings.
+# Declaración y Asignación
+nombre = "Juan"         # Cadena (str)
+edad = 30              # Entero (int)
+altura = 1.75          # Flotante (float)
+es_estudiante = True    # Booleano (bool)
+frutas = ["manzana", "banana"] # Lista (list)
+coordenadas = (10, 20)      # Tupla (tuple)
+persona = {"nombre": "Ana", "edad": 25} # Diccionario (dict)
+numeros = {1,2,3,4} # Conjunto (set)
+complejo = 2 + 3j # Complejo (complex)
 
 
-# Ejemplo de concatenación con f-strings:
-nombre = "Gustavo"
-bienvenida = f"Hola {nombre}, ¿cómo estás?"  # Usamos un f-string para incluir la variable 'nombre' en la cadena.
-print(bienvenida)
+# Tipos de Datos en Python
+# - Números: int, float, complex
+# - Cadenas: str
+# - Booleanos: bool (True, False)
+# - Listas: list (mutables, ordenadas)
+# - Tuplas: tuple (inmutables, ordenadas)
+# - Diccionarios: dict (pares clave-valor)
+# - Conjuntos: set (elementos únicos, no ordenados)
 
+# Mostrar el tipo de una variable
+print(type(nombre))       # <class 'str'>
+print(type(edad))         # <class 'int'>
+print(type(altura))       # <class 'float'>
+print(type(es_estudiante)) # <class 'bool'>
+print(type(frutas))       # <class 'list'>
+print(type(coordenadas))   # <class 'tuple'>
+print(type(persona))     # <class 'dict'>
+print(type(numeros))     # <class 'set'>
+print(type(complejo))     # <class 'complex'>
 
-# Ejemplo de concatenación con una variable booleana:
-numero = True  # Asignamos un valor booleano a la variable 'numero'.
-bienvenida = f"Hola {numero}, ¿cómo estás?"  # Convertimos el valor booleano a texto al concatenarlo.
-print(bienvenida)
+# Conversión de Tipos (Casting)
+numero_str = "123"
+numero_int = int(numero_str)  # str a int
+numero_float = float(numero_str) # str a float
+numero_bool = bool(numero_int) # (int a bool 0 es False, cualquier otro número es True)
+texto_de_numero = str(numero_int) # int a str
+print(type(numero_int)) # <class 'int'>
+print(type(numero_float)) # <class 'float'>
+print(type(numero_bool)) # <class 'bool'>
+print(type(texto_de_numero)) # <class 'str'>
 
-## Eliminación de variables
+# Operadores de Asignación Compuesta
+x = 10
+x += 5  # x = x + 5 (x ahora es 15)
+x -= 3  # x = x - 3 (x ahora es 12)
+x *= 2  # x = x * 2 (x ahora es 24)
+x /= 4  # x = x / 4 (x ahora es 6.0)
+x %= 3  # x = x % 3 (x ahora es 0.0)
+x //= 2 # x = x // 2 (x ahora es 0.0)
+x **= 2 # x = x ** 2 (x ahora es 0.0)
+print(x)
 
-# Si deseamos eliminar una variable para que deje de estar definida, podemos usar la instrucción 'del'.
-# Ejemplo:
-# del bienvenida  # Elimina la variable 'bienvenida'.
+# Concatenación (con f-strings)
+nombre = "Elena"
+edad = 28
+mensaje = f"Hola, mi nombre es {nombre} y tengo {edad} años."
+print(mensaje)
 
-## Uso de operadores de pertenencia en cadenas
+# Eliminación de Variables
+y = 20
+del y
+# print(y) # Genera NameError: name 'y' is not defined
 
-# Los operadores de pertenencia ('in' y 'not in') permiten verificar si una subcadena está presente en otra cadena.
-# Devuelven 'True' si la subcadena se encuentra, o 'False' si no está presente.
+# Operadores de Pertenencia (en cadenas)
+texto = "Python es poderoso"
+print("Python" in texto)    # True
+print("java" in texto)      # False
+print("java" not in texto)  # True
 
-# Ejemplo de operador de pertenencia:
-print("ola" in bienvenida) # En este caso da True
-print("Gustavo" in bienvenida)  # Aca da False
+# Convenciones de Nombres
+nombre_de_variable = "Snake Case"
+# nombreDeVariable = "Camel Case" (menos común en Python)
 
-
-## Convensión de Escritura de variables
-
-nombre_completo = "Gustavo Rodriguez" # Se llama Snake-Case
-
-nombreCompleto = "GustavoRodriguez" # Se llama camel-case
+#Ejemplo de uso de in con listas
+mi_lista = [1, 2, 3, 4, 5]
+print(3 in mi_lista) # True
+print(7 in mi_lista) # False
