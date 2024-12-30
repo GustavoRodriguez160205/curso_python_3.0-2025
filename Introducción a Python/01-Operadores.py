@@ -1,155 +1,76 @@
 
 
-############################################
+# --------------------------------------------------
+# OPERADORES ARITMÉTICOS
+# --------------------------------------------------
 
-# OPERADORES ARITMETRICOS
+print("\n--- OPERADORES ARITMÉTICOS ---\n")
 
-############################################
-
-# Definimos los números para las operaciones
 num1 = 12
 num2 = 5
 num3 = 4
 
-# Realizamos las operaciones aritméticas
-suma = num1 + num2
-resta = num1 - num3
-multiplicacion = num1 * num2
-division = num1 / num2  # División con resultado flotante
-potencia = num1 ** num2  # Exponenciación
-division_entera = num1 // num2  # División entera (sin decimales)
-resto = num1 % num3  # Resto de la división
+print(f"{num1} + {num2} = {num1 + num2}  # Suma: {num1} más {num2}")
+print(f"{num1} - {num3} = {num1 - num3}  # Resta: {num1} menos {num3}")
+print(f"{num1} * {num2} = {num1 * num2}  # Multiplicación: {num1} por {num2}")
+print(f"{num1} / {num2} = {num1 / num2:.2f}  # División: {num1} entre {num2} (resultado decimal)")
+print(f"{num1} // {num2} = {num1 // num2}  # División entera: Cociente de {num1} entre {num2}")
+print(f"{num1} % {num3} = {num1 % num3}  # Módulo (resto): Residuo de {num1} entre {num3}")
+print(f"{num1} ** {num2} = {num1 ** num2}  # Potencia: {num1} elevado a la {num2}")
 
-# Presentación de los resultados
-print("=" * 50)
-print(" Resultados de Operaciones Aritméticas ".center(50, ' '))
-print("=" * 50)
+print("\n--------------------------------------------------\n")
 
-# Mostrar cada operación con claridad
-print(f"Suma:                {num1} + {num2} = {suma}")
-print(f"Resta:               {num1} - {num3} = {resta}")
-print(f"Multiplicación:      {num1} * {num2} = {multiplicacion}")
-print(f"División:            {num1} / {num2} = {division:.2f} (con 2 decimales)")
-print(f"Potenciación:        {num1} ** {num2} = {potencia}")
-print(f"División entera:     {num1} // {num2} = {division_entera}")
-print(f"Resto:               {num1} % {num3} = {resto}")
-
-print("=" * 50)
-
-
-
-
-################################################################
-
-
+# --------------------------------------------------
 # OPERADORES DE COMPARACIÓN
+# --------------------------------------------------
 
+print("\n--- OPERADORES DE COMPARACIÓN ---\n")
 
-#################################################################
+print("3 > 4:", 3 > 4, " # Mayor que: ¿3 es mayor que 4?")
+print("3 < 4:", 3 < 4, " # Menor que: ¿3 es menor que 4?")
+print("3 >= 4:", 3 >= 4, " # Mayor o igual que: ¿3 es mayor o igual que 4?")
+print("4 <= 4:", 4 <= 4, " # Menor o igual que: ¿4 es menor o igual que 4?")
+print("3 == 4:", 3 == 4, " # Igualdad: ¿3 es igual a 4?")
+print("3 != 4:", 3 != 4, " # Desigualdad: ¿3 es diferente de 4?")
 
+print("\n--- Otros ejemplos de comparación ---\n")
 
-# Operadores de Comparación en Python
+print('"apple" < "banana":', "apple" < "banana", " # Cadenas: Orden alfabético")
+print('[1, 2, 3] == [1, 2, 3]:', [1, 2, 3] == [1, 2, 3], " # Listas: Comparación elemento a elemento")
+print('3.5 > 2.5:', 3.5 > 2.5, " # Flotantes: Comparación numérica")
+print('True == 1:', True == 1, " # Booleanos: True es 1, False es 0")
 
-# Los operadores de comparación se utilizan para comparar dos valores.
-# El resultado de una comparación es un valor booleano: True o False.
+print("\n--- Comparación de cadenas (ejemplo de usuario) ---\n")
 
-# Es mayor que (>)
-# Devuelve True si el operando de la izquierda es mayor que el operando de la derecha.
-print("3 > 4:", 3 > 4)  # Salida: False
+usuarios_bd = "Gustavo12"
+usuario_tipeado = "Gusta"
+print(f'"{usuarios_bd}" == "{usuario_tipeado}": {usuarios_bd == usuario_tipeado} # No coinciden')
 
-# Es menor que (<)
-# Devuelve True si el operando de la izquierda es menor que el operando de la derecha.
-print("3 < 4:", 3 < 4)  # Salida: True
+usuario_tipeado = "Gustavo12"
+print(f'"{usuarios_bd}" == "{usuario_tipeado}": {usuarios_bd == usuario_tipeado} # Coinciden')
 
-# Es mayor o igual que (>=)
-# Devuelve True si el operando de la izquierda es mayor o igual que el operando de la derecha.
-print("3 >= 4:", 3 >= 4)  # Salida: False
+print("\n--------------------------------------------------\n")
 
-# Es menor o igual que (<=)
-# Devuelve True si el operando de la izquierda es menor o igual que el operando de la derecha.
-print("4 <= 4:", 4 <= 4)  # Salida: True
-
-# Son iguales (==)
-# Devuelve True si ambos operandos son iguales.
-print("3 == 4:", 3 == 4)  # Salida: False
-
-# Son distintos (!=)
-# Devuelve True si ambos operandos son diferentes.
-print("3 != 4:", 3 != 4)  # Salida: True
-
-
-
-
-
-# Ejemplos adicionales para mayor claridad
-
-# Comparación de cadenas
-# Las cadenas se comparan lexicográficamente utilizando el orden alfabético.
-print('"apple" < "banana":', "apple" < "banana")  # Salida: True
-
-# Comparación de listas
-# Las listas se comparan elemento por elemento.
-print('[1, 2, 3] == [1, 2, 3]:', [1, 2, 3] == [1, 2, 3])  # Salida: True
-print('[1, 2, 3] != [1, 2, 4]:', [1, 2, 3] != [1, 2, 4])  # Salida: True
-
-# Comparación de números flotantes
-# Los números flotantes se comparan de la misma manera que los enteros.
-print('3.5 > 2.5:', 3.5 > 2.5)  # Salida: True
-print('3.5 < 2.5:', 3.5 < 2.5)  # Salida: False
-
-# Comparación de booleanos
-# Los valores booleanos se comparan como enteros: False es 0 y True es 1.
-print('True == 1:', True == 1)  # Salida: True
-print('False == 0:', False == 0)  # Salida: True
-
-
-# Calculos Combinados
-
-a = 30
-b = 15
-c = 20
-
-comparacion = a +  b == c
-print(f"El resultado de la comparación es: {comparacion}")
-
-
-# Comparación de Usuarios
-
-usuariosDeBd = "Gustavo12"
-usuarioTipeado = "Gusta"
-
-print(usuariosDeBd == usuarioTipeado)
-
-
-
-############################################################
-
-
-
+# --------------------------------------------------
 # OPERADORES LÓGICOS
+# --------------------------------------------------
 
+print("\n--- OPERADORES LÓGICOS ---\n")
 
+print("--- AND (y) ---")
+print("True and True:", True and True, " # Ambas verdaderas")
+print("False and True:", False and True, " # Una falsa")
+print("True and False:", True and False, " # Una falsa")
+print("False and False:", False and False, " # Ambas falsas")
 
-##############################################################
+print("\n--- OR (o) ---")
+print("True or True:", True or True, " # Al menos una verdadera")
+print("False or True:", False or True, " # Al menos una verdadera")
+print("True or False:", True or False, " # Al menos una verdadera")
+print("False or False:", False or False, " # Ambas falsas")
 
+print("\n--- NOT (no) ---")
+print("not True:", not True, " # Invierte True a False")
+print("not False:", not False, " # Invierte False a True")
 
-## Operadores Lógicos
-
-#AND
-
-Resultado = True & True #Devolver True
-Resultado2 = False & True #Devolver Falso
-Resultado3 = True & False #Devolver Falso
-Resultado4 = False & False #Devolver Falso
-
-#OR
-
-Resultado5 = True | True #Devolver True
-Resultado6 = False | True #Devolver True
-Resultado7 = True | False #Devolver True
-Resultado8 = False | False #Devolver Falso
-
-#NOT
-
-Resultado9 = not True #Devolver Falso
-Resultado10 = not False #Devolver True
+print("\n--------------------------------------------------\n")
