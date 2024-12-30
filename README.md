@@ -73,10 +73,10 @@ Aquí tienes una lista de recursos que te serán de gran utilidad:
 
 ## Notas y Pendientes
 
-*   [ ] Repasar el concepto de herencia múltiple con ejemplos más complejos.
-*   [ ] Buscar datasets interesantes para practicar con Pandas.
-*   [ ] Investigar librerías de visualización de datos más avanzadas (Seaborn, Plotly).
+*   [Completado ] Repasar el concepto de herencia múltiple con ejemplos más complejos.
+*   [Completado ] Buscar datasets interesantes para practicar con Pandas.
+*   [Completado ] Investigar librerías de visualización de datos más avanzadas (Seaborn, Plotly).
 
 ---
 
-**Última actualización:** \[Fecha de la última actualización]
+
