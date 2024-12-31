@@ -74,9 +74,7 @@ print("Python" in texto)    # True
 print("java" in texto)      # False
 print("java" not in texto)  # True
 
-# Convenciones de Nombres
-nombre_de_variable = "Snake Case"
-# nombreDeVariable = "Camel Case" (menos común en Python)
+
 
 #Ejemplo de uso de in con listas
 mi_lista = [1, 2, 3, 4, 5]
