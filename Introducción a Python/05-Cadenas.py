@@ -4,52 +4,46 @@
 # Crear una cadena de ejemplo
 cadena = "Hola Mundo"
 
+# Modificar cadenas
+print("Minúsculas:", cadena.lower())          # "hola mundo"
+print("Mayúsculas:", cadena.upper())          # "HOLA MUNDO"
+print("Primera letra mayúscula:", cadena.capitalize())     # "Hola mundo"
+print("Cada palabra mayúscula inicial:", cadena.title())          # "Hola Mundo"
+print("Invierte mayúsculas/minúsculas:", cadena.swapcase())       # "hOLA mUNDO"
+print("Elimina espacios al inicio y al final:", cadena.strip())          # "Hola Mundo"
+print("Reemplaza 'a' por 'e':", cadena.replace("a", "e"))  # "Helo Mundo"
 
+# Propiedades de las cadenas
+print("Inicia con 'Hola':", cadena.startswith("Hola"))  # True
+print("Termina con 'Mundo':", cadena.endswith("Mundo"))    # True
+print("Todo en minúsculas:", cadena.islower())            # False
+print("Todo en mayúsculas:", cadena.isupper())            # False
+print("Cada palabra inicia con mayúscula:", cadena.istitle())            # True
+print("Solo letras:", cadena.isalpha())            # False
+print("Solo números:", cadena.isdigit())            # False
+print("Letras y/o dígitos:", cadena.isalnum())            # False
+print("Solo espacios:", cadena.isspace())            # False
 
-# 1. Modificar cadenas
-print(cadena.lower())          # Minúsculas: "hola mundo"
-print(cadena.upper())          # Mayúsculas: "HOLA MUNDO"
-print(cadena.capitalize())     # Primera letra mayúscula: "Hola mundo"
-print(cadena.title())          # Cada palabra mayúscula inicial: "Hola Mundo"
-print(cadena.swapcase())       # Invierte mayúsculas/minúsculas: "hOLA mUNDO"
-print(cadena.strip())          # Elimina espacios al inicio y al final
-print(cadena.replace("a", "e"))  # Reemplaza "a" por "e": "Helo Mundo"
+# Dividir y unir cadenas
+print("Dividir por espacios:", cadena.split())             # ["Hola", "Mundo"]
+print("Unir con guiones:", "-".join(["Hola", "Mundo"]))  # "Hola-Mundo"
+print("Particionar por espacio:", cadena.partition(" "))      # ("Hola", " ", "Mundo")
 
+# Buscar y contar
+print("Primera ocurrencia de 'o':", cadena.find("o"))           # 1
+print("Última ocurrencia de 'o':", cadena.rfind("o"))          # 9
+print("Cuenta ocurrencias de 'o':", cadena.count("o"))          # 2
 
+# Ajustar formato
+print("Centrar con guiones:", cadena.center(20, "-"))      # "----Hola Mundo-----"
+print("Alinear izquierda:", cadena.ljust(20, "-"))       # "Hola Mundo---------"
+print("Alinear derecha:", cadena.rjust(20, "-"))       # "---------Hola Mundo"
+print("Rellenar con ceros:", cadena.zfill(15))            # "00000Hola Mundo"
 
-# 2. Propiedades de las cadenas
-print(cadena.startswith("Hola"))  # Verifica si inicia con "Hola": True
-print(cadena.endswith("Mundo"))    # Verifica si termina con "Mundo": True
-print(cadena.islower())            # Minúsculas: False
-print(cadena.isupper())            # Mayúsculas: False
-print(cadena.istitle())            # Cada palabra inicia con mayúscula: True
-print(cadena.isalpha())            # Solo letras: False
-print(cadena.isdigit())            # Solo números: False
-print(cadena.isalnum())            # Letras y/o dígitos: False
-print(cadena.isspace())            # Solo espacios: False
+# Codificar y decodificar
+print("Codifica en bytes:", cadena.encode("utf-8"))      # b"Hola Mundo"
+print("Decodifica bytes:", b"Hola Mundo".decode("utf-8"))  # "Hola Mundo"
 
-
-
-# 3. Dividir y unir cadenas
-print(cadena.split())             # Divide por espacios: ["Hola", "Mundo"]
-print("-".join(["Hola", "Mundo"]))  # Une con guiones: "Hola-Mundo"
-print(cadena.partition(" "))      # Divide en 3 partes: ("Hola", " ", "Mundo")
-
-# 4. Buscar y contar
-print(cadena.find("o"))           # Primera ocurrencia de "o": 1
-print(cadena.rfind("o"))          # Última ocurrencia de "o": 9
-print(cadena.count("o"))          # Cuenta ocurrencias de "o": 2
-
-# 5. Ajustar formato
-print(cadena.center(20, "-"))      # Centrar: "----Hola Mundo-----"
-print(cadena.ljust(20, "-"))       # Alinear izquierda: "Hola Mundo---------"
-print(cadena.rjust(20, "-"))       # Alinear derecha: "---------Hola Mundo"
-print(cadena.zfill(15))            # Rellenar con ceros: "00000Hola Mundo"
-
-# 6. Codificar y decodificar
-print(cadena.encode("utf-8"))      # Codifica en bytes
-print(b"Hola Mundo".decode("utf-8"))  # Decodifica bytes a cadena
-
-# 7. Otros métodos
-print(cadena.casefold())          # Minúsculas más agresivas
-print("{0} tiene {1} años".format("Juan", 30))  # Formato: "Juan tiene 30 años"
+# Otros métodos
+print("Minúsculas más agresivas:", cadena.casefold())          # "hola mundo"
+print("Formato personalizado:", "{0} tiene {1} años".format("Juan", 30))  # "Juan tiene 30 años"
