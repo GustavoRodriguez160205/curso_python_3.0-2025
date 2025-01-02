@@ -132,4 +132,3 @@ copia_lista = lista_original.copy() #Crea una copia independiente
 copia_lista[0] = 10
 print("\nLista original:", lista_original)
 print("Copia de la lista:", copia_lista)
-

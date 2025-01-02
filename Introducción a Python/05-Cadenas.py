@@ -1,49 +1,67 @@
-# Guía de Métodos de Cadenas en Python
-# ====================================
+# Métodos de Cadenas en Python - Explicación Completa
 
-# Crear una cadena de ejemplo
-cadena = "Hola Mundo"
+# Introducción:
+# Las cadenas son secuencias de caracteres en Python. Son inmutables, lo que significa que no podemos modificar una cadena después de haberla creado, 
+# pero podemos aplicar métodos que devuelven nuevas cadenas con modificaciones. 
+# En este bloque vamos a ver los métodos más comunes para trabajar con cadenas de texto.
 
-# Modificar cadenas
-print("Minúsculas:", cadena.lower())          # "hola mundo"
-print("Mayúsculas:", cadena.upper())          # "HOLA MUNDO"
-print("Primera letra mayúscula:", cadena.capitalize())     # "Hola mundo"
-print("Cada palabra mayúscula inicial:", cadena.title())          # "Hola Mundo"
-print("Invierte mayúsculas/minúsculas:", cadena.swapcase())       # "hOLA mUNDO"
-print("Elimina espacios al inicio y al final:", cadena.strip())          # "Hola Mundo"
-print("Reemplaza 'a' por 'e':", cadena.replace("a", "e"))  # "Helo Mundo"
+# 1. Transformación de texto
+# Estos métodos permiten cambiar el formato del texto.
 
-# Propiedades de las cadenas
-print("Inicia con 'Hola':", cadena.startswith("Hola"))  # True
-print("Termina con 'Mundo':", cadena.endswith("Mundo"))    # True
-print("Todo en minúsculas:", cadena.islower())            # False
-print("Todo en mayúsculas:", cadena.isupper())            # False
-print("Cada palabra inicia con mayúscula:", cadena.istitle())            # True
-print("Solo letras:", cadena.isalpha())            # False
-print("Solo números:", cadena.isdigit())            # False
-print("Letras y/o dígitos:", cadena.isalnum())            # False
-print("Solo espacios:", cadena.isspace())            # False
+texto = "hola mundo"
+print(texto.upper())       # Convierte todo a MAYÚSCULAS: "HOLA MUNDO"
+print(texto.lower())       # Convierte todo a minúsculas: "hola mundo"
+print(texto.capitalize())  # Pone la PRIMERA letra en mayúscula: "Hola mundo"
+print(texto.title())       # Pone la primera letra de CADA palabra en mayúscula: "Hola Mundo"
+print(texto.swapcase())    # Invierte mayúsculas y minúsculas: "HOLA MUNDO"
 
-# Dividir y unir cadenas
-print("Dividir por espacios:", cadena.split())             # ["Hola", "Mundo"]
-print("Unir con guiones:", "-".join(["Hola", "Mundo"]))  # "Hola-Mundo"
-print("Particionar por espacio:", cadena.partition(" "))      # ("Hola", " ", "Mundo")
+# 2. Espacios en blanco
+# Estos métodos permiten manejar los espacios innecesarios al inicio y al final de una cadena.
 
-# Buscar y contar
-print("Primera ocurrencia de 'o':", cadena.find("o"))           # 1
-print("Última ocurrencia de 'o':", cadena.rfind("o"))          # 9
-print("Cuenta ocurrencias de 'o':", cadena.count("o"))          # 2
+texto_espacios = "   hola mundo   "
+print(texto_espacios.strip())  # Quita espacios al inicio y al final: "hola mundo"
+print(texto_espacios.lstrip()) # Quita espacios SOLO al inicio: "hola mundo   "
+print(texto_espacios.rstrip()) # Quita espacios SOLO al final: "   hola mundo"
 
-# Ajustar formato
-print("Centrar con guiones:", cadena.center(20, "-"))      # "----Hola Mundo-----"
-print("Alinear izquierda:", cadena.ljust(20, "-"))       # "Hola Mundo---------"
-print("Alinear derecha:", cadena.rjust(20, "-"))       # "---------Hola Mundo"
-print("Rellenar con ceros:", cadena.zfill(15))            # "00000Hola Mundo"
+# 3. Búsqueda y reemplazo
+# Estos métodos permiten buscar una subcadena dentro de una cadena y reemplazarla.
 
-# Codificar y decodificar
-print("Codifica en bytes:", cadena.encode("utf-8"))      # b"Hola Mundo"
-print("Decodifica bytes:", b"Hola Mundo".decode("utf-8"))  # "Hola Mundo"
+texto_buscar = "aprende python, python es genial"
+print(texto_buscar.find("python"))  # Encuentra la primera aparición de "python": 8
+print(texto_buscar.rfind("python")) # Encuentra la última aparición de "python": 17
+print(texto_buscar.replace("python", "JavaScript"))  # Reemplaza todas las apariciones de "python" por "JavaScript": "aprende JavaScript, JavaScript es genial"
 
-# Otros métodos
-print("Minúsculas más agresivas:", cadena.casefold())          # "hola mundo"
-print("Formato personalizado:", "{0} tiene {1} años".format("Juan", 30))  # "Juan tiene 30 años"
+# 4. División y unión
+# Estos métodos son útiles para dividir una cadena en partes o unir varias partes en una sola cadena.
+
+texto_dividir = "manzana,pera,platano"
+print(texto_dividir.split(","))  # Divide la cadena en una lista usando la coma como delimitador: ['manzana', 'pera', 'platano']
+texto_unir = ["manzana", "pera", "platano"]
+print(",".join(texto_unir))  # Une los elementos de la lista con una coma: "manzana,pera,platano"
+
+# 5. Verificación
+# Verificamos propiedades de la cadena, como si está formada solo por letras, si es alfanumérica, etc.
+
+texto_verificar = "python123"
+print(texto_verificar.isalpha())  # Devuelve True si solo tiene letras: False
+print(texto_verificar.isdigit())  # Devuelve True si solo tiene dígitos: False
+print(texto_verificar.isalnum())  # Devuelve True si es alfanumérica (letras y números): True
+print(texto_verificar.islower())  # Devuelve True si todos los caracteres son minúsculas: True
+print(texto_verificar.isupper())  # Devuelve True si todos los caracteres son mayúsculas: False
+
+# 6. Otros métodos útiles
+# - longitud de la cadena, verificar inicio o fin de la cadena.
+
+texto_otro = "python"
+print(len(texto_otro))       # Devuelve la longitud de la cadena: 6
+print(texto_otro.startswith("py"))  # Devuelve True si la cadena comienza con "py": True
+print(texto_otro.endswith("on"))    # Devuelve True si la cadena termina con "on": True
+
+# 7. Formateo de cadenas
+# Los métodos de formateo permiten insertar valores en una cadena de texto de manera más flexible.
+
+nombre = "Gustavo"
+edad = 20
+print("Mi nombre es {} y tengo {} años.".format(nombre, edad))  # Formato clásico
+print(f"Mi nombre es {nombre} y tengo {edad} años.")            # Usando f-strings (recomendado)
+
