@@ -1,204 +1,135 @@
-# Introducción a las listas en Python
-# Las listas son colecciones ordenadas que permiten almacenar elementos de cualquier tipo. 
-# Son útiles para gestionar conjuntos de datos dinámicos y realizar operaciones como agregar, eliminar, buscar y ordenar.
+"""" Las listas en Python son:
+- **Ordenadas:** Los elementos tienen un orden específico que se mantiene.
+- **Mutables:** Se pueden modificar después de su creación (añadir, eliminar, cambiar elementos).
+- **Heterogéneas:** Pueden contener elementos de diferentes tipos de datos.
+- **Dinámicas:** Su tamaño puede crecer o disminuir.
+- **Indexadas:** Se accede a sus elementos mediante índices numéricos (empezando desde 0).
 
-print("\n--- Ejemplos prácticos de métodos y operaciones con listas ---")
+"""
 
+# 1. Creación de listas:
 
+# a. Usando corchetes []:
+mi_lista = [1, 2, 3, "hola", 3.14, True]  # Listas pueden contener diferentes tipos de datos
+print("Lista creada con []:", mi_lista)
 
-# 1. Creación de listas
-print("\n--- 1. Creación de listas ---")
-nombres = ["Ana", "Luis", "Pedro", "Marta"]  # Lista de cadenas
-edades = [18, 25, 30, 40]  # Lista de enteros
-mixta = ["Juan", 23, 1.85, True]  # Lista con elementos de diferentes tipos
+# b. Usando la función list():
+otra_lista = list((4, 5, 6))  # Convirtiendo una tupla a lista
+print("Lista creada con list():", otra_lista)
 
-print("Lista de nombres:", nombres)
-print("Lista de edades:", edades)
-print("Lista mixta:", mixta)
+cadena = "Python"
+lista_desde_cadena = list(cadena) #Convierte una cadena en una lista de caracteres
+print("Lista creada desde una cadena:", lista_desde_cadena)
 
+lista_vacia = [] #Lista vacía
+print("Lista vacía:", lista_vacia)
 
+# 2. Acceso a los elementos:
 
+print("\n--- Acceso a elementos ---")
+print("Primer elemento:", mi_lista[0])  # Índices comienzan desde 0
+print("Último elemento:", mi_lista[-1])  # Índice negativo para acceder desde el final
+print("Sublista (slicing):", mi_lista[1:4])  # Desde el índice 1 hasta el 3 (no inclusive)
+print("Sublista desde el inicio:", mi_lista[:3]) #Desde el inicio hasta el índice 2
+print("Sublista hasta el final:", mi_lista[2:]) #Desde el índice 2 hasta el final
+print("Sublista con paso:", mi_lista[::2]) #Desde el inicio hasta el final con paso 2
+print("Sublista con paso negativo:", mi_lista[::-1]) #Invierte la lista
 
-# 2. Modificar elementos de una lista
-print("\n--- 2. Modificar elementos ---")
-nombres[1] = "Lucas"  # Cambia el elemento en el índice 1
-print("Lista de nombres modificada:", nombres)
+# 3. Modificación de listas:
 
+print("\n--- Modificación de listas ---")
+mi_lista[0] = 10  # Modificando un elemento
+print("Lista con elemento modificado:", mi_lista)
 
+mi_lista.append("nuevo elemento")  # Añadiendo un elemento al final
+print("Lista con append():", mi_lista)
 
+mi_lista.insert(2, "elemento insertado")  # Insertando un elemento en una posición específica
+print("Lista con insert():", mi_lista)
 
-# 3. Slicing (rebanado)
-print("\n--- 3. Slicing (rebanado) ---")
-print("Primeros dos elementos de edades:", edades[:2])  # Elementos en índices 0 y 1
-print("Últimos dos elementos de edades:", edades[-2:])  # Últimos dos elementos
+otra_lista.extend([7, 8, 9])  # Añadiendo múltiples elementos al final
+print("Lista con extend():", otra_lista)
 
+# 4. Eliminación de elementos:
 
+print("\n--- Eliminación de elementos ---")
+del mi_lista[3]  # Eliminando un elemento por índice
+print("Lista con del:", mi_lista)
 
+elemento_eliminado = mi_lista.pop(1)  # Eliminando un elemento por índice y obteniendo su valor
+print("Elemento eliminado con pop():", elemento_eliminado)
+print("Lista después de pop():", mi_lista)
 
+mi_lista.remove(3.14)  # Eliminando un elemento por valor (solo la primera ocurrencia)
+print("Lista con remove():", mi_lista)
 
-# 4. Combinar listas y eliminar duplicados
-print("\n--- 4. Combinar listas y eliminar duplicados ---")
-lista_a = [1, 2, 3]
-lista_b = [3, 4, 5]
-combinada = lista_a + lista_b  # Combina las listas
-sin_duplicados = list(set(combinada))  # Elimina duplicados convirtiendo a conjunto y luego a lista
-print("Lista combinada:", combinada)
-print("Lista sin duplicados:", sin_duplicados)
-
-
-
-
-# 5. Iterar sobre una lista
-print("\n--- 5. Iterar sobre una lista ---")
-for nombre in nombres:
-    print(f"Hola, {nombre}!")  # Saluda a cada nombre en la lista
-
-
-
-
-
-# 6. Operaciones con listas numéricas
-print("\n--- 6. Operaciones con listas numéricas ---")
-numeros = [10, 20, 30, 40]
-suma = sum(numeros)  # Suma de todos los elementos
-promedio = suma / len(numeros)  # Promedio
-print("Lista de números:", numeros)
-print("Suma de números:", suma)
-print("Promedio:", promedio)
-
-
-
-
-# 7. Comprobaciones con listas
-print("\n--- 7. Comprobaciones con listas ---")
-colores = ["rojo", "verde", "azul"]
-print("¿'verde' está en colores?", "verde" in colores)
-print("¿'amarillo' no está en colores?", "amarillo" not in colores)
-
-
-
-
-# 8. Filtrar listas
-print("\n--- 8. Filtrar listas ---")
-edades_adultos = [edad for edad in edades if edad >= 18]  # Filtra edades mayores o iguales a 18
-print("Edades de adultos:", edades_adultos)
-
-
-# 9. Ordenar listas con claves personalizadas
-print("\n--- 9. Ordenar listas con claves personalizadas ---")
-personas = [("Ana", 18), ("Luis", 25), ("Pedro", 22)]
-ordenadas_por_edad = sorted(personas, key=lambda x: x[1])  # Ordena por edad (índice 1)
-print("Lista de personas ordenada por edad:", ordenadas_por_edad)
-
-
-
-# 10. Duplicar y modificar listas
-print("\n--- 10. Copia y modificación de listas ---")
-original = [1, 2, 3]
-copia = original.copy()  # Crea una copia
-copia.append(4)  # Modifica la copia
-print("Lista original:", original)
-print("Copia modificada:", copia)
-
-
-
-# 11. Otros métodos útiles
-print("\n--- 11. Otros métodos útiles ---")
-
-# Añadir elementos
-mi_lista = [1, 2, 3]
-mi_lista.append(4)  # Añade 4 al final
-print("Lista con append(4):", mi_lista)
-
-mi_lista.insert(2, "Nuevo")  # Inserta "Nuevo" en el índice 2
-print("Lista con insert(2, 'Nuevo'):", mi_lista)
-
-mi_lista.extend([5, 6])  # Añade múltiples elementos al final
-print("Lista con extend([5, 6]):", mi_lista)
-
-
-
-
-# Eliminar elementos
-
-mi_lista.remove(2)  # Elimina la primera ocurrencia de 2
-print("Lista con remove(2):", mi_lista)
-
-elemento_eliminado = mi_lista.pop()  # Elimina y retorna el último elemento
-print("Lista con pop():", mi_lista)
-print("Elemento eliminado:", elemento_eliminado)
-
-del mi_lista[0]  # Elimina el elemento en el índice 0
-print("Lista con del mi_lista[0]:", mi_lista)
-
-mi_lista.clear()  # Elimina todos los elementos
+mi_lista.clear() #Elimina todos los elementos de la lista
 print("Lista con clear():", mi_lista)
 
-# Contar ocurrencias
-ejemplo = [1, 2, 2, 3, 3, 3, 4]
-conteo = ejemplo.count(3)  # Cuenta cuántas veces aparece el valor 3
-print("Cantidad de veces que aparece 3:", conteo)
+mi_lista = [1, 2, 3, 4, 5] #Recreamos la lista para los siguientes ejemplos
 
-# Obtener el índice de un elemento
-indice = ejemplo.index(2)  # Encuentra el índice de la primera aparición del valor 2
-print("Índice de la primera aparición de 2:", indice)
+# 5. Operaciones con listas:
 
-# Revertir la lista
-mi_lista = [1, 2, 3, 4]
-mi_lista.reverse()  # Reversa la lista
-print("Lista revertida:", mi_lista)
+print("\n--- Operaciones con listas ---")
+lista1 = [1, 2, 3]
+lista2 = [4, 5, 6]
+lista_concatenada = lista1 + lista2  # Concatenación
+print("Listas concatenadas:", lista_concatenada)
 
-# Ordenar la lista
-mi_lista = [4, 2, 3, 1]
-mi_lista.sort()  # Ordena la lista en el lugar
-print("Lista ordenada con sort():", mi_lista)
+lista_repetida = lista1 * 3  # Repetición
+print("Lista repetida:", lista_repetida)
 
+print("Longitud de la lista:", len(lista1))  # Longitud
+print("Máximo de la lista:", max(lista1))  # Máximo (solo para tipos comparables)
+print("Mínimo de la lista:", min(lista1))  # Mínimo (solo para tipos comparables)
+print("Suma de la lista:", sum(lista1)) #Suma (solo para tipos numéricos)
 
+# 6. Búsqueda en listas:
 
+print("\n--- Búsqueda en listas ---")
+if 2 in lista1:
+    print("El número 2 está en la lista.")
 
+print("Índice del número 3:", lista1.index(3))  # Devuelve el índice de la primera ocurrencia
 
+print("Cantidad de veces que aparece el número 2:", lista1.count(2))  # Cuenta las ocurrencias
 
-# 12. Desempaquetado de listas
-print("\n--- 12. Desempaquetado de listas ---")
-a, b, *resto = [1, 2, 3, 4, 5]
-print("a:", a)
-print("b:", b)
-print("resto:", resto)
+# 7. Ordenamiento de listas:
 
+print("\n--- Ordenamiento de listas ---")
+lista_desordenada = [5, 1, 4, 2, 8]
+lista_desordenada.sort()  # Ordena la lista IN-PLACE (modifica la lista original)
+print("Lista ordenada con sort():", lista_desordenada)
 
+lista_desordenada = [5, 1, 4, 2, 8]
+lista_ordenada = sorted(lista_desordenada) #Crea una NUEVA lista ordenada
+print("Lista original:", lista_desordenada)
+print("Lista ordenada con sorted():", lista_ordenada)
 
+lista_desordenada.sort(reverse=True) #Ordena la lista de forma descendente
+print("Lista ordenada descendentemente:", lista_desordenada)
 
+# 8. Listas anidadas (matrices):
 
+print("\n--- Listas anidadas (matrices) ---")
+matriz = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print("Matriz:", matriz)
+print("Elemento en la fila 1, columna 2:", matriz[1][2]) #Accedemos al número 6
 
+# 9. Comprensión de listas:
 
-# 13. Uso de list() para convertir a lista
-print("\n--- 13. Uso de list() para convertir a lista ---")
-tupla = (1, 2, 3)
-lista_convertida = list(tupla)  # Convierte la tupla en una lista
-print("Tupla convertida en lista:", lista_convertida)
+print("\n--- Comprensión de listas ---")
+numeros = [1, 2, 3, 4, 5]
+cuadrados = [x**2 for x in numeros]
+print("Lista de cuadrados:", cuadrados)
 
+pares = [x for x in numeros if x % 2 == 0]
+print("Lista de números pares:", pares)
 
+#10. Copia de listas
+lista_original = [1, 2, 3]
+copia_lista = lista_original.copy() #Crea una copia independiente
+copia_lista[0] = 10
+print("\nLista original:", lista_original)
+print("Copia de la lista:", copia_lista)
 
-
-
-# 14. Enumerar elementos de una lista
-print("\n--- 14. Enumerar elementos de una lista ---")
-for indice, valor in enumerate(nombres):  # Obtiene el índice y el valor
-    print(f"Índice {indice}: {valor}")
-
-
-
-
-
-# 15. Comparaciones entre `sort()` y `sorted()`
-print("\n--- 15. Comparación entre sort() y sorted() ---")
-# sort() ordena en el lugar y no devuelve nada
-numeros = [3, 1, 2]
-numeros.sort()
-print("Lista ordenada con sort():", numeros)
-
-# sorted() devuelve una nueva lista ordenada sin modificar la original
-numeros_original = [3, 1, 2]
-numeros_ordenados = sorted(numeros_original)
-print("Lista original:", numeros_original)
-print("Lista ordenada con sorted():", numeros_ordenados)

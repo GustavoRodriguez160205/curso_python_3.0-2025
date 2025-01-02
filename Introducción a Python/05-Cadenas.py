@@ -1,128 +1,55 @@
-# Métodos de Cadenas en Python (Enfoque en Métodos Solicitados)
+# Guía de Métodos de Cadenas en Python
+# ====================================
 
-cadena1 = "Hola,Maquina,Como,Estas"
-cadena2 = "Bienvenido maquinola"
-cadena3 = "12345"
-
-
-####################################################
-
-
-print("\n--- Métodos de Conversión ---")
-
-# upper(): Convierte la cadena a mayúsculas.
-mayusc = cadena1.upper()
-print(f"cadena1.upper(): '{cadena1}' -> '{mayusc}'")
-
-
-# lower(): Convierte la cadena a minúsculas.
-minusc = cadena1.lower()
-print(f"cadena1.lower(): '{cadena1}' -> '{minusc}'")
-
-
-# capitalize(): Convierte el primer carácter a mayúscula y el resto a minúsculas.
-primer_letra_mayusc = cadena1.capitalize()
-print(f"cadena1.capitalize(): '{cadena1}' -> '{primer_letra_mayusc}'")
+# Crear una cadena de ejemplo
+cadena = "Hola Mundo"
 
 
 
-
-###############################################################################################
-
-
-print("\n--- Métodos de Búsqueda ---")
-
-# find(): Busca una subcadena. Devuelve el índice de la primera ocurrencia o -1 si no la encuentra.
-busqueda_find = cadena1.find("Como")
-print(f"cadena1.find('Como'): '{cadena1}'.find('Como') -> {busqueda_find}")
-
-busqueda_find_no_existe = cadena1.find("Z")
-print(f"cadena1.find('Z'): '{cadena1}'.find('Z') -> {busqueda_find_no_existe}")
-
-
-# index(): Busca una subcadena. Devuelve el índice de la primera ocurrencia. Lanza ValueError si no la encuentra.
-try:
-    busqueda_index = cadena1.index("H")
-    print(f"cadena1.index('H'): '{cadena1}'.index('H') -> {busqueda_index}")
-    # Imprime: cadena1.index('H'): 'Hola,Maquina,Como,Estas'.index('H') -> 0
-    busqueda_index_error = cadena1.index("Z")  # Esto lanza una excepción
-    print(f"cadena1.index('Z'): '{cadena1}'.index('Z') -> {busqueda_index_error}") # Esta línea no se ejecuta si hay error
-except ValueError as e:
-    print(f"Error (ValueError): {e}")
-    # Imprime: Error (ValueError): substring not found
-
-
-###################################################################################################
-
-
-print("\n--- Métodos de Verificación ---")
-
-# isnumeric(): Devuelve True si todos los caracteres son numéricos.
-es_numerico = cadena1.isnumeric()
-print(f"cadena1.isnumeric(): '{cadena1}'.isnumeric() -> {es_numerico}")
+# 1. Modificar cadenas
+print(cadena.lower())          # Minúsculas: "hola mundo"
+print(cadena.upper())          # Mayúsculas: "HOLA MUNDO"
+print(cadena.capitalize())     # Primera letra mayúscula: "Hola mundo"
+print(cadena.title())          # Cada palabra mayúscula inicial: "Hola Mundo"
+print(cadena.swapcase())       # Invierte mayúsculas/minúsculas: "hOLA mUNDO"
+print(cadena.strip())          # Elimina espacios al inicio y al final
+print(cadena.replace("a", "e"))  # Reemplaza "a" por "e": "Helo Mundo"
 
 
 
-es_numerico_cadena3 = cadena3.isnumeric()
-print(f"cadena3.isnumeric(): '{cadena3}'.isnumeric() -> {es_numerico_cadena3}")
-
-
-# isalpha(): Devuelve True si todos los caracteres son alfabéticos.
-es_alfanumerico = cadena1.isalpha()
-print(f"cadena1.isalpha(): '{cadena1}'.isalpha() -> {es_alfanumerico}")
-
-
-
-
-
-##########################################################################
-
-
-print("\n--- Métodos de Conteo y Longitud ---")
-
-# count(): Cuenta las coincidencias de una subcadena dentro de otra.
-contar_coincidencias = cadena1.count("ma") # Cuenta "ma" en minuscula
-print(f"cadena1.count('ma'): '{cadena1}'.count('ma') -> {contar_coincidencias}")
-
-
-# len(): Cuenta cuántos caracteres tiene una cadena.
-contar_caracteres = len(cadena1)
-print(f"len(cadena1): len('{cadena1}') -> {contar_caracteres}")
+# 2. Propiedades de las cadenas
+print(cadena.startswith("Hola"))  # Verifica si inicia con "Hola": True
+print(cadena.endswith("Mundo"))    # Verifica si termina con "Mundo": True
+print(cadena.islower())            # Minúsculas: False
+print(cadena.isupper())            # Mayúsculas: False
+print(cadena.istitle())            # Cada palabra inicia con mayúscula: True
+print(cadena.isalpha())            # Solo letras: False
+print(cadena.isdigit())            # Solo números: False
+print(cadena.isalnum())            # Letras y/o dígitos: False
+print(cadena.isspace())            # Solo espacios: False
 
 
 
+# 3. Dividir y unir cadenas
+print(cadena.split())             # Divide por espacios: ["Hola", "Mundo"]
+print("-".join(["Hola", "Mundo"]))  # Une con guiones: "Hola-Mundo"
+print(cadena.partition(" "))      # Divide en 3 partes: ("Hola", " ", "Mundo")
 
-#######################################################3
+# 4. Buscar y contar
+print(cadena.find("o"))           # Primera ocurrencia de "o": 1
+print(cadena.rfind("o"))          # Última ocurrencia de "o": 9
+print(cadena.count("o"))          # Cuenta ocurrencias de "o": 2
 
+# 5. Ajustar formato
+print(cadena.center(20, "-"))      # Centrar: "----Hola Mundo-----"
+print(cadena.ljust(20, "-"))       # Alinear izquierda: "Hola Mundo---------"
+print(cadena.rjust(20, "-"))       # Alinear derecha: "---------Hola Mundo"
+print(cadena.zfill(15))            # Rellenar con ceros: "00000Hola Mundo"
 
-print("\n--- Métodos de Verificación (Inicio/Fin) ---")
+# 6. Codificar y decodificar
+print(cadena.encode("utf-8"))      # Codifica en bytes
+print(b"Hola Mundo".decode("utf-8"))  # Decodifica bytes a cadena
 
-# startswith(): Verifica si una cadena empieza con otra cadena dada.
-empieza_con = cadena1.startswith("H")
-print(f"cadena1.startswith('H'): '{cadena1}'.startswith('H') -> {empieza_con}")
-
-
-
-# endswith(): Verifica si una cadena termina con otra cadena dada.
-termina_con = cadena1.endswith("s")
-print(f"cadena1.endswith('s'): '{cadena1}'.endswith('s') -> {termina_con}")
-
-
-
-
-
-####################################################################
-
-
-print("\n--- Métodos de Reemplazo y Separación ---")
-
-# replace(): Reemplaza todas las ocurrencias de una subcadena por otra.
-cadena_nueva = cadena1.replace(",", " ")
-print(f"cadena1.replace(',', ' '): '{cadena1}'.replace(',', ' ') -> '{cadena_nueva}'")
-
-
-
-# split(): Separa una cadena en una lista de subcadenas usando un delimitador.
-cadena_separada = cadena1.split(",")
-print(f"cadena1.split(','): '{cadena1}'.split(',') -> {cadena_separada}")
-print(f"Primer elemento de la lista: cadena_separada[0] -> '{cadena_separada[0]}'")
+# 7. Otros métodos
+print(cadena.casefold())          # Minúsculas más agresivas
+print("{0} tiene {1} años".format("Juan", 30))  # Formato: "Juan tiene 30 años"
