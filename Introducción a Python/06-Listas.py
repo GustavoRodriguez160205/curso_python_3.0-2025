@@ -1,7 +1,7 @@
 """" Las listas en Python son:
 - **Ordenadas:** Los elementos tienen un orden específico que se mantiene.
 - **Mutables:** Se pueden modificar después de su creación (añadir, eliminar, cambiar elementos).
-- **Heterogéneas:** Pueden contener elementos de diferentes tipos de datos.
+- **Heterogéneas:** Pueden contener elementos de diferentes tipos de datos.vbnvnnn nvnvbnvbnvnb
 - **Dinámicas:** Su tamaño puede crecer o disminuir.
 - **Indexadas:** Se accede a sus elementos mediante índices numéricos (empezando desde 0).
 
