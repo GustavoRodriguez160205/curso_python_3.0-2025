@@ -16,18 +16,30 @@ print(f"Apellido: {apellido}")   # Dalto
 print(f"Suscriptores: {suscriptores}") # 1000000
 print()
 
+
+####################
+####################
+####################
+
+
+
 # 2. Desempaquetado en lista
 lista = ["Lucas", "Dalto", 1000000]
 
 # Desempaquetado de la lista
 nombre, apellido, suscriptores = lista
 
-# Mostrando resultados
+
 print("Desempaquetado de lista:")
 print(f"Nombre: {nombre}")       # Lucas
 print(f"Apellido: {apellido}")   # Dalto
 print(f"Suscriptores: {suscriptores}") # 1000000
 print()
+
+
+####################
+####################
+####################
 
 # 3. Desempaquetado con un número variable de elementos (usando *)
 datos = ["Lucas", "Dalto", 1000000, "Argentina", "YouTube"]
@@ -42,6 +54,15 @@ print(f"Apellido: {apellido}")       # Dalto
 print(f"Suscriptores: {suscriptores}") # 1000000
 print(f"Otros datos: {otros_datos}")  # ['Argentina', 'YouTube']
 print()
+
+
+
+####################
+####################
+####################
+
+
+
 
 # 4. Desempaquetado en diccionarios (claves y valores)
 diccionario = {"nombre": "Lucas", "apellido": "Dalto", "suscriptores": 1000000}
