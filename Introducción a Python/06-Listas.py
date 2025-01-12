@@ -33,12 +33,12 @@ print("Lista vacía:", lista_vacia)
 # - El primer elemento está en el índice 0, y se pueden usar índices negativos para acceder desde el final.
 
 print("\n--- Acceso a elementos ---")
-print("Primer elemento:", mi_lista[0])  # Índices comienzan desde 0
-print("Último elemento:", mi_lista[-1])  # Índice negativo para acceder desde el final
+print("Primer elemento:", mi_lista[0])       # Índices comienzan desde 0
+print("Último elemento:", mi_lista[-1])      # Índice negativo para acceder desde el final
 print("Sublista (slicing):", mi_lista[1:4])  # Desde el índice 1 hasta el 3 (no inclusive)
 print("Sublista desde el inicio:", mi_lista[:3])  # Desde el inicio hasta el índice 2
-print("Sublista hasta el final:", mi_lista[2:])  # Desde el índice 2 hasta el final
-print("Sublista con paso:", mi_lista[::2])  # Desde el inicio hasta el final con paso 2
+print("Sublista hasta el final:", mi_lista[2:])   # Desde el índice 2 hasta el final
+print("Sublista con paso:", mi_lista[::2])        # Desde el inicio hasta el final con paso 2
 print("Sublista con paso negativo:", mi_lista[::-1])  # Invierte la lista
 
 
