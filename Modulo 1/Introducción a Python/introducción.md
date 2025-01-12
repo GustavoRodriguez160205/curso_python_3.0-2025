@@ -92,4 +92,4 @@ Una vez que completes este módulo, estarás listo para adentrarte en el mundo d
 
 ---
 
-**Última actualización:** \[29/12/24]
+**Última actualización:** \[12/01/25]
