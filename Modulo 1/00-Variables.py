@@ -4,15 +4,15 @@
 # Python infiere el tipo de dato según el valor asignado.
 
 # Declaración y Asignación
-nombre = "Juan"         # Cadena (str)
-edad = 30              # Entero (int)
-altura = 1.75          # Flotante (float)
-es_estudiante = True    # Booleano (bool)
-frutas = ["manzana", "banana"] # Lista (list)
-coordenadas = (10, 20)      # Tupla (tuple)
+nombre = "Juan"           # Cadena (str)
+edad = 30                 # Entero (int)
+altura = 1.75             # Flotante (float)
+es_estudiante = True      # Booleano (bool)
+frutas = ["manzana", "banana"]   # Lista (list)
+coordenadas = (10, 20)           # Tupla (tuple)
 persona = {"nombre": "Ana", "edad": 25} # Diccionario (dict)
-numeros = {1,2,3,4} # Conjunto (set)
-complejo = 2 + 3j # Complejo (complex)
+numeros = {1,2,3,4}   # Conjunto (set)
+complejo = 2 + 3j     # Complejo (complex)
 
 
 # Tipos de Datos en Python
@@ -25,26 +25,26 @@ complejo = 2 + 3j # Complejo (complex)
 # - Conjuntos: set (elementos únicos, no ordenados)
 
 # Mostrar el tipo de una variable
-print(type(nombre))       # <class 'str'>
-print(type(edad))         # <class 'int'>
-print(type(altura))       # <class 'float'>
+print(type(nombre))        # <class 'str'>
+print(type(edad))          # <class 'int'>
+print(type(altura))        # <class 'float'>
 print(type(es_estudiante)) # <class 'bool'>
-print(type(frutas))       # <class 'list'>
+print(type(frutas))        # <class 'list'>
 print(type(coordenadas))   # <class 'tuple'>
-print(type(persona))     # <class 'dict'>
-print(type(numeros))     # <class 'set'>
-print(type(complejo))     # <class 'complex'>
+print(type(persona))       # <class 'dict'>
+print(type(numeros))       # <class 'set'>
+print(type(complejo))      # <class 'complex'>
 
 # Conversión de Tipos (Casting)
 numero_str = "123"
-numero_int = int(numero_str)  # str a int
+numero_int = int(numero_str)     # str a int
 numero_float = float(numero_str) # str a float
-numero_bool = bool(numero_int) # (int a bool 0 es False, cualquier otro número es True)
-texto_de_numero = str(numero_int) # int a str
-print(type(numero_int)) # <class 'int'>
-print(type(numero_float)) # <class 'float'>
-print(type(numero_bool)) # <class 'bool'>
-print(type(texto_de_numero)) # <class 'str'>
+numero_bool = bool(numero_int)   # (int a bool 0 es False, cualquier otro número es True)
+texto_de_numero = str(numero_int)  # int a str
+print(type(numero_int))            # <class 'int'>
+print(type(numero_float))          # <class 'float'>
+print(type(numero_bool))           # <class 'bool'>
+print(type(texto_de_numero))       # <class 'str'>
 
 # Operadores de Asignación Compuesta
 x = 10
